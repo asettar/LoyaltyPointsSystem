@@ -14,9 +14,14 @@ class ComposerStaticInit19b0974c8ed31292a8cd7bea470e26f5
         'ffecb95d45175fd40f75be8a23b34f90' => __DIR__ . '/..' . '/twig/twig/src/Resources/debug.php',
         'c7baa00073ee9c61edf148c51917cfb4' => __DIR__ . '/..' . '/twig/twig/src/Resources/escaper.php',
         'f844ccf1d25df8663951193c3fc307c8' => __DIR__ . '/..' . '/twig/twig/src/Resources/string_loader.php',
+        '88f58b11cbb49f769c3e3f0e8345e680' => __DIR__ . '/../..' . '/app/Core/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'a' =>
+        array (
+            'app\\' => 4,
+        ),
         'T' =>
         array (
             'Twig\\' => 5,
@@ -29,6 +34,10 @@ class ComposerStaticInit19b0974c8ed31292a8cd7bea470e26f5
     );
 
     public static $prefixDirsPsr4 = array (
+        'app\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/app',
+        ),
         'Twig\\' =>
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
