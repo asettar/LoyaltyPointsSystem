@@ -1,21 +1,14 @@
 <?php
 
 use app\Core\Application;
+use app\Core\Request;
+use app\Core\Router;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+app\Core\show($_GET);
+app\Core\show($_SERVER['REQUEST_URI']);
 
-// var_dump($_GET);
-// show($_GET);
-// var_dump($_SERVER['REQUEST_URI']);
+$app = new Application(new Router(new Request()));
 
-// show(splitUrl());
-// loadController();
-
-
-var_dump($_SERVER['REQUEST_URI']);
-
-$app = new Application();
 $app->run();
-// $app->router->get('/', function);
-// $app->router->get();

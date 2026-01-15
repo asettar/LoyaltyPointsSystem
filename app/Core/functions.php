@@ -8,4 +8,10 @@ function show($stuf) {
     echo "</pre>";
 }
 
+            
+function    errorExit(string $error) {
+    echo $error . "<br>";
+    exit(1);
+}
+    
 ?>

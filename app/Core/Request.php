@@ -8,15 +8,11 @@ class Request {
     }
 
     public function getPath() : string {
-        $path = $_SERVER['REQUEST_URI'];
-        $position = strpos($path, '?'); 
-        if ($position !== false) $path = substr($path, 0, $position); 
-        return $path;
+        return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     }
 
     public function getMethod() : string {
-        show($_SERVER['REQUEST_METHOD']);
-        return $_SERVER['REQUEST_METHOD'];  // to know if request is get or post.
+        return ($_SERVER['REQUEST_METHOD']);  // to know if request is get or post.
     }
 }
 
