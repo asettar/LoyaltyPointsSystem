@@ -2,6 +2,7 @@
 
 namespace app\Core;
 
+use app\Controllers\AuthController;
 class Router {
     private array   $routes = [];
     private Request $request;
@@ -29,13 +30,10 @@ class Router {
             require "../app/Controllers/_404Controller.php";
             exit();
         }
-        [$controllerClass, $controllerMethod] = $callback;
-        if (!class_exists($controllerClass))
-            errorExit("$controllerClass class not found.");
-        if (!method_exists($controllerClass, $controllerMethod))
-            errorExit("$controllerMethod method not found in $controllerClass");
-        $controller = new $controllerClass();
-        $controller->$controllerMethod();
+        [$controllerObject, $controllerMethod] = $callback;
+        if (!method_exists($controllerObject, $controllerMethod))
+            errorExit("$controllerMethod method not found.");
+        $controllerObject->$controllerMethod();
     }
 }
 
